@@ -1,0 +1,16 @@
+{
+  "name": "eventhub",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.28.6",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@stoplight/prism-cli": "^5.16.0",
+    "turbo": "^2.5.0"
+  }
+}
