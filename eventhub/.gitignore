@@ -21,3 +21,6 @@ coverage/
 
 # Visual Studio
 .vs/
+
+# Generated OpenAPI TypeScript types
+packages/contracts/src/api.d.ts
