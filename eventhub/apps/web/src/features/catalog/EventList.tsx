@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getEvents } from "../../api/events";
 
-type Event = Awaited<ReturnType<typeof getEvents>>[number];
+type Event = Awaited<ReturnType<typeof getEvents>>["items"][number];
 
 export function EventList() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -10,7 +10,7 @@ export function EventList() {
 
   useEffect(() => {
     getEvents()
-      .then(setEvents)
+      .then((data) => setEvents(data.items))
       .catch(() => setError("Не удалось загрузить события"))
       .finally(() => setLoading(false));
   }, []);
@@ -34,8 +34,8 @@ export function EventList() {
           {events.map((event) => (
             <li key={event.id}>
               <h3>{event.title}</h3>
-              <p>Дата: {new Date(event.date).toLocaleString("ru-RU")}</p>
-              <p>Место: {event.location ?? "Не указано"}</p>
+              <p>Дата: {new Date(event.startsAt).toLocaleString("ru-RU")}</p>
+              <p>Место: {event.venue.name + ", " + event.venue.city}</p>
             </li>
           ))}
         </ul>

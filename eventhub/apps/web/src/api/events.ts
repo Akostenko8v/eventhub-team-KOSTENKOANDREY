@@ -1,6 +1,7 @@
+
 import type { paths } from "../../../../packages/contracts/src/api";
 
-type EventsResponse =
+export type EventsResponse =
   paths["/events"]["get"]["responses"][200]["content"]["application/json"];
 
 export async function getEvents(): Promise<EventsResponse> {
