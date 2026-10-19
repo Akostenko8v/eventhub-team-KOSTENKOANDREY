@@ -51,6 +51,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventPage'
+              examples:
+                filled:
+                  summary: Каталог с событием
+                  value:
+                    items:
+                      - id: 018f2c1e-4a7b-7c3d-9e1f-2a5b6c7d8e9f
+                        title: Симфонічний вечір
+                        description: Концерт класичної музики
+                        startsAt: '2026-12-19T19:00:00Z'
+                        venue:
+                          id: 018f2c1e-0000-7c3d-9e1f-2a5b6c7d8e00
+                          name: Філармонія
+                          city: Вінниця
+                        minPrice:
+                          amount: 25000
+                          currency: UAH
+                        availableSeats: 143
+                    nextCursor: null
 
         '500':
           description: Внутренняя ошибка сервера
