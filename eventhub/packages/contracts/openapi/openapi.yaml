@@ -83,6 +83,41 @@ paths:
                     type: string
                     example: Internal server error
 
+
+  /events/{eventId}:
+    get:
+      operationId: getEvent
+      summary: Получить информацию об одном событии
+      tags:
+        - catalog
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          description: Уникальный идентификатор события
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Информация о событии
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        '404':
+          description: Событие не найдено
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+                    example: Event not found
+
 components:
   schemas:
 
