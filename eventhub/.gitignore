@@ -1,0 +1,26 @@
+# залежності
+node_modules/
+
+# результати збірки
+dist/
+build/
+.turbo/
+
+# оточення — секрети НІКОЛИ не потрапляють у git
+.env
+.env.*
+!.env.example
+
+# редактори й ОС
+.DS_Store
+.idea/
+*.swp
+
+# тести
+coverage/
+
+# Visual Studio
+.vs/
+
+# Generated OpenAPI TypeScript types
+packages/contracts/src/api.d.ts
