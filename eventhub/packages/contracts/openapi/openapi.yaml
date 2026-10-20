@@ -45,6 +45,7 @@ paths:
             maximum: 50
             default: 20
       responses:
+
         '200':
           description: Список событий
           content:
@@ -68,6 +69,12 @@ paths:
                           amount: 25000
                           currency: UAH
                         availableSeats: 143
+                    nextCursor: null
+
+                empty:
+                  summary: Пустий каталог подій
+                  value:
+                    items: []
                     nextCursor: null
 
         '500':
