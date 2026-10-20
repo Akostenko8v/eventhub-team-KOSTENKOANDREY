@@ -7,7 +7,7 @@
     },
     "build": {
       "dependsOn": [ "^build" ],
-      "outputs": [ "dist/**", "build/**" ]
+      "outputs": [ "dist/**", "build/**", "src/api.d.ts" ]
     },
     "lint": {},
     "typecheck": {}

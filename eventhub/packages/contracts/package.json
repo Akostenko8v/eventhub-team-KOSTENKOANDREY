@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "generate": "openapi-typescript openapi/openapi.yaml -o src/api.d.ts"
+    "build": "openapi-typescript openapi/openapi.yaml -o src/api.d.ts",
+    "generate": "pnpm run build"
   },
   "devDependencies": {
     "openapi-typescript": "^7.0.0"

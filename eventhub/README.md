@@ -169,3 +169,23 @@ curl http://localhost:3000/health
 - RFC 9457 (формат помилок) — <https://www.rfc-editor.org/rfc/rfc9457>
 - Turborepo — <https://turborepo.com/docs>
 - pnpm workspaces — <https://pnpm.io/workspaces>
+
+
+## Актуальний запуск лабораторної №1
+------------------------------------
+Команди виконуються з папки `eventhub`.
+
+1. Встановити залежності: `pnpm install`.
+2. Згенерувати типи OpenAPI: `pnpm contracts`.
+3. Створити `apps/web/.env.local` на основі `apps/web/.env.example`.
+4. Запустити Prism в окремому терміналі: `pnpm mock`.
+5. Запустити фронтенд в іншому терміналі: `pnpm --filter @eventhub/web dev`.
+6. Відкрити `http://localhost:5173`.
+
+Перевірки: `pnpm build`, `pnpm typecheck`, `pnpm lint`.
+
+API-контракт: `packages/contracts/openapi/openapi.yaml`.
+
+Архітектурне рішення: `docs/adr/0001-openapi-contract.md`.
+
+У Windows PowerShell можна використовувати `pnpm.cmd` замість `pnpm`.
